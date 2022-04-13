@@ -10,8 +10,9 @@ int main() {
 	int i, j;			// 配列の要素番号（ループカウンタ）
 	char grade;			// 成績の評価
 	// ソート処理
-	for (i = 0; i < DATA_NUM-1; i++) {
-		for (j = i; j < DATA_NUM; j++) {
+	/*
+	for (i = 0; i < DATA_NUM - 1; i++) {
+		for (j = i+1; j < DATA_NUM; j++) {
 			if (point[i] < point[j])
 			{
 				int t = point[i];
@@ -20,6 +21,11 @@ int main() {
 			}
 		}
 	}
+	*/
+	/*std::sort(point,point+ (sizeof(point) / sizeof(point[0])));
+	std::reverse(point, point + (sizeof(point) / sizeof(point[0])));*/
+	std::sort(std::begin(point), std::end(point), std::greater<>());
+
 	for (i = 0; i < DATA_NUM; i++) {
 		if (point[i] >= 83){
 			grade='A';
