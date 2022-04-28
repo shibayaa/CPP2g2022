@@ -6,6 +6,7 @@ int main()
 {
 	const int BoxCount = 3;
 	BOX boxes[BoxCount];
+	BOX testBox = {2,10,30};
 	for (int i = 0; i < BoxCount; i++) {
 		cout << "•‚ð“ü—ÍF";
 		cin >> boxes[i].x;
