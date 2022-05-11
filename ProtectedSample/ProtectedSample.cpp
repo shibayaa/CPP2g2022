@@ -67,10 +67,12 @@ int main()
     //x = instB.pri;  //アクセスできません
     //x = instB.pro;  //アクセスできません
     //x = instB.pub;//アクセスできません
+    x = instB.b_pub;    //これだけ可能
     ClassC instC = ClassC(-1, -2, -3);
     //x = instC.pri;  //アクセスできません
     //x = instC.pro;  //アクセスできません
     x = instC.pub;
+    x = instC.c_pub;
 
 
 
