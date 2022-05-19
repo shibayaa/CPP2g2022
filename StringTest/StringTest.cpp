@@ -30,7 +30,7 @@ public:
 };
 class StringTest3 {
 private:
-    char s[20];  //　こちら側でポインタの指す先を変えられないが外からは変えられる
+    char s[20];  //　コピーで独立
 public:
     StringTest3(const char* s) {
         strcpy_s(this->s,s);
