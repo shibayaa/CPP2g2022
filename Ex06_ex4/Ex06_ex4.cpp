@@ -5,16 +5,13 @@
 #include<string>
 using namespace std;
 
-/// <summary>
-/// 物体の定義
-/// </summary>
 class Solid {
 private:
 	string* name;
 public:
-	Solid(string* name = NULL) {
+	Solid(const char* name = NULL) {
 		if (name != NULL) {
-			this->name = name;
+			this->name = new string(name);
 		}
 		else {
 			this->name = NULL;
@@ -23,8 +20,8 @@ public:
 	virtual double GetVolume() = 0;
 	virtual double GetSurface() = 0;
 	virtual double GetPackageLength() = 0;
-	string* GetName() {
-		return name;
+	const char* GetName() {
+		return name->data();
 	}
 	~Solid() {
 		if (name != NULL) {
@@ -47,7 +44,7 @@ public:
 		double width,   //幅
 		double height,  //高さ
 		double depth,    //奥行
-		string* name = NULL	//名前
+		const char* name = NULL	//名前
 	) :Solid(name ) {
 		this->width = width;
 		this->height = height;
@@ -81,7 +78,7 @@ public:
 	Cylinder(
 		double radius,  //　底面の半径
 		double height,   // 高さ
-		string* name = NULL	//名前
+		const char* name = NULL	//名前
 	) :Solid(name) {
 		this->radius = radius;
 		this->height = height;
@@ -111,7 +108,7 @@ public:
 	Cone(
 		double radius,  //　底面の半径
 		double height,   // 高さ
-		string* name = NULL	//名前
+		const char* name = NULL	//名前
 	) :Solid(name) {
 		this->radius = radius;
 		this->height = height;
@@ -139,7 +136,7 @@ private:
 public:
 	Sphere(
 		double radius,  //　底面の半径
-		string* name = NULL	//名前
+		const char* name = NULL	//名前
 	) :Solid(name) {
 		this->radius = radius;
 	}
@@ -179,14 +176,10 @@ int GetSolidKuronekoPackage(Solid& solid) {
 
 int main()
 {
-	std::string boxName = "箱";
-	Box* box = new Box(80.0, 20, 5,&boxName);
-	std::string cylinderName = "円柱";
-	Cylinder* cylinder = new Cylinder( 30, 10,&cylinderName);
-	std::string coneName = "円錐";
-	Cone* cone= new Cone(30, 10,&coneName);
-	std::string sphereName = "球";
-	Sphere* sphere = new Sphere(20,&sphereName);
+	Box* box = new Box(80.0, 20.0, 5.0, "箱");
+	Cylinder* cylinder = new Cylinder( 30, 10, "円柱");
+	Cone* cone= new Cone(30, 10, "円錐");
+	Sphere* sphere = new Sphere(20, "球");
 	const int N_TABLE = 4;
 	Solid* solid[N_TABLE] = { box, cylinder,cone,sphere };
 

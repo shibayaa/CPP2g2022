@@ -83,6 +83,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ex06_ex3", "ex06_ex3\ex06_e
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex06_ex4", "Ex06_ex4\Ex06_ex4.vcxproj", "{D56DCE29-AD98-413C-910B-1725716D113F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringTest", "StringTest\StringTest.vcxproj", "{E1C2013B-B686-4462-A385-E9D05A398DA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -573,6 +575,18 @@ Global
 		{D56DCE29-AD98-413C-910B-1725716D113F}.Release|x64.Build.0 = Release|x64
 		{D56DCE29-AD98-413C-910B-1725716D113F}.Release|x86.ActiveCfg = Release|Win32
 		{D56DCE29-AD98-413C-910B-1725716D113F}.Release|x86.Build.0 = Release|Win32
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Debug|Any CPU.Build.0 = Debug|x64
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Debug|x64.ActiveCfg = Debug|x64
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Debug|x64.Build.0 = Debug|x64
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Debug|x86.ActiveCfg = Debug|Win32
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Debug|x86.Build.0 = Debug|Win32
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Release|Any CPU.ActiveCfg = Release|x64
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Release|Any CPU.Build.0 = Release|x64
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Release|x64.ActiveCfg = Release|x64
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Release|x64.Build.0 = Release|x64
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Release|x86.ActiveCfg = Release|Win32
+		{E1C2013B-B686-4462-A385-E9D05A398DA6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
