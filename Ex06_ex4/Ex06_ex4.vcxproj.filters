@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ex06_ex4.cpp">
+    <ClCompile Include="Ex07_ex4.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
