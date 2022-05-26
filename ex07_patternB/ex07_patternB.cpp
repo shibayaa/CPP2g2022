@@ -99,6 +99,16 @@ public:
 		this->height = height;
 		this->depth = depth;
 	}
+	Box(
+		double width,   //幅
+		const char* name = NULL	//名前
+	) :Solid(name)
+	{
+		this->width = width;
+		this->height = width;
+		this->depth = width;
+	}
+
 	double GetVolume() {
 		return width * height * depth;
 	}
@@ -240,6 +250,7 @@ int main()
 	FreightTable yupackFreight(kuronekoSize, _countof(kuronekoSize));
 	FreightTable sagawaFreight(kuronekoSize, _countof(kuronekoSize));
 	Box gunpla = Box(80.0, 20.0, 5.0, "MGガンダム1/144");
+	Box ballGunpla = Box(2, "ボール1/144");
 	Cylinder canJuice = Cylinder(30, 10, "Qoo");
 	Cone cone = Cone(30, 10, "コーン");
 	Sphere succerBall = Sphere(20, "FIFA公認サッカーボール");
@@ -248,7 +259,7 @@ int main()
 	{
 		new Package(&kuronekoFreight, &gunpla),
 		new Package(&yupackFreight, &gunpla),
-		new Package(&sagawaFreight, &gunpla),
+		new Package(&sagawaFreight, &ballGunpla),
 		new Package(&kuronekoFreight,&canJuice),
 		new Package(&kuronekoFreight,&cone),
 		new Package(&kuronekoFreight,&succerBall)

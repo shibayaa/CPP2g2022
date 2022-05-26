@@ -35,7 +35,7 @@ namespace ex07
             {
                 if (name != null)
                 {
-                    this.name = new string( name);
+                    this.name = new string(name);
                 }
                 else
                 {
@@ -104,23 +104,22 @@ namespace ex07
                 return this.width + this.height + this.depth;
             }
         }
-            // 料金表
-            static readonly int[] kuronekoSize = new int[] { 60, 80, 100, 120, 140, 160, 180, 200 };
+        // 料金表
+        static readonly int[] kuronekoSize = new int[] { 60, 80, 100, 120, 140, 160, 180, 200 };
 
-            static void Main(string[] args)
+        static void Main(string[] args)
+        {
+            FreightTable kuronekoFreight = new FreightTable(kuronekoSize);
+            Box gunpla = new Box(80.0, 20.0, 5.0, "MGガンダム1/144");
+            var gunplaPackage = new Package(kuronekoFreight, gunpla);
+            int packageSize = gunplaPackage.GetPackageSize();
+            if (packageSize != 0)
             {
-                FreightTable kuronekoFreight = new FreightTable(kuronekoSize);
-                Box gunpla = new Box(80.0, 20.0, 5.0, "MGガンダム1/144");
-                var gunplaPackage = new Package(kuronekoFreight, gunpla);
-                int packageSize = gunplaPackage.GetPackageSize();
-                if (packageSize != 0)
-                {
-                    Console.WriteLine($"{gunplaPackage.GetSolid().GetName()}のサイズは{packageSize}サイズです");
-                    Console.WriteLine("HelloWorld");
-                }
+                Console.WriteLine($"{gunplaPackage.GetSolid().GetName()}のサイズは{packageSize}サイズです");
             }
         }
     }
 }
+
 
 
