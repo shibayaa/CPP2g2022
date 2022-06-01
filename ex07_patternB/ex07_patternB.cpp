@@ -127,6 +127,19 @@ public:
 	double GetDepth() {
 		return this->depth;
 	}
+	const char* GetName() {
+		return Solid::GetName();
+	}
+	Box operator + (Box& dest) {
+		string name1 = string(this->GetName());
+		string name2 = string(dest.GetName());
+		string tempStr = name1+name2;
+		return Box(
+			this->width + dest.width,
+			this->width + dest.height,
+			this->depth + dest.depth,
+			tempStr.data());
+	}
 };
 
 class Cylinder :public Solid {
@@ -251,10 +264,12 @@ int main()
 	FreightTable sagawaFreight(kuronekoSize, _countof(kuronekoSize));
 	Box gunpla = Box(80.0, 20.0, 5.0, "MGガンダム1/144");
 	Box ballGunpla = Box(2, "ボール1/144");
+	Box testBox = gunpla + ballGunpla;
+
 	Cylinder canJuice = Cylinder(30, 10, "Qoo");
 	Cone cone = Cone(30, 10, "コーン");
 	Sphere succerBall = Sphere(20, "FIFA公認サッカーボール");
-	const int N_TABLE = 6;
+	const int N_TABLE = 7;
 	Package* package[N_TABLE] =
 	{
 		new Package(&kuronekoFreight, &gunpla),
@@ -262,7 +277,9 @@ int main()
 		new Package(&sagawaFreight, &ballGunpla),
 		new Package(&kuronekoFreight,&canJuice),
 		new Package(&kuronekoFreight,&cone),
-		new Package(&kuronekoFreight,&succerBall)
+		new Package(&kuronekoFreight,&succerBall),
+		new Package(&kuronekoFreight,&testBox),
+
 	};
 
 	double length;
