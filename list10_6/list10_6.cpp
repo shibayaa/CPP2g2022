@@ -13,8 +13,11 @@ int main() {
     m.insert(make_pair("K003", "melon"));
     m.insert(make_pair("K002", "banana"));
     m.insert(make_pair("K004", "lemon"));
-
-    cout << "K001に対応する商品名：" << m["K001"] << endl;
+    //m.insert_or_assign("K004", "strawberry");
+    m["K004"] = "strawberry";
+    m["K099"] = "mango";
+ 
+    cout << "K099に対応する商品名：" << m["K099"] << endl;
 
     // キーに対応する値を表示する
     string num;
@@ -30,14 +33,12 @@ int main() {
         RightHand,LeftHand,Head,LeftFoot,RightFoot
     };
     enum Weapon {
-        Knife, ShotGun, Sword, gun
+        Knife=10, ShotGun, Sword, Gun
     };
     // マップを作成する
     map<WeaponSocket, Weapon> playerWeapons;
-    playerWeapons.insert(RightHand, gun);
-
-
-
-
+    playerWeapons.insert(make_pair( RightHand, Gun));
+    playerWeapons.insert(make_pair(LeftHand, Knife));
+    cout << "RightHandに対応する武器：" << playerWeapons[RightHand] << endl;
     return 0;
 }
